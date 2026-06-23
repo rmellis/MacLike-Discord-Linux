@@ -1,4 +1,4 @@
-# MacLike Discord Theme
+# MacLike Theme - Linux Compatibility Patch
 
 ![Version](https://img.shields.io/badge/version-1.1.2-blue)   ![Discord_Client](https://img.shields.io/badge/Supports-BetterDiscord%20|%20Vencord-7289DA)   [![Discord](https://img.shields.io/badge/Discord-WAM_Project-5865F2?style=flat&logo=discord&logoColor=white)](https://discord.gg/MyxaEQxjFT)
 
