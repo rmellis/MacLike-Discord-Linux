@@ -25,7 +25,7 @@ A clean, minimalist Discord theme aiming to create a more native, macOS-like exp
 A Discord client mod is required. BetterDiscord or Vencord is recommended.
 
 ### BetterDiscord
-1.  Download the `MacLike.theme.css` file from the [latest release](https://github.com/syryz/MacLike-Discord/releases/latest).
+1.  Download the `MacLike.theme.css` file from the [here](https://github.com/rmellis/MacLike-Discord-Linux/blob/main/MacLike.theme.css).
 2.  Open Discord settings.
 3.  Navigate to the `Themes` tab in the BetterDiscord section.
 4.  Click the `Open Themes Folder` button.
@@ -33,7 +33,7 @@ A Discord client mod is required. BetterDiscord or Vencord is recommended.
 6.  Return to Discord and enable `MacLike` from the theme list.
 
 ### Vencord
-1.  Download the `MacLike.theme.css` file from the [latest release](https://github.com/syryz/MacLike-Discord/releases/latest)
+1.  Download the `MacLike.theme.css` file from the [here](https://github.com/rmellis/MacLike-Discord-Linux/blob/main/MacLike.theme.css).
 2.  Open Discord settings.
 3.  Navigate to the `Vencord` tab and select the `Themes` sub-tab.
 4.  If using QuickCSS, copy and paste the contents of `MacLike.theme.css` to the editor.
