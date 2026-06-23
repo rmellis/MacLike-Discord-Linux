@@ -1,19 +1,17 @@
 /**
  * @name MacLike
- * @version 1.2.0
- * @description A theme borrowing MacOS design language. Part of the WAM project.
+ * @version 2.2.1
+ * @description A theme borrowing MacOS design language. Part of the WAM project. (forked and Updated for Linux by rmellis)
  * @author syrys
-*/
-
+ */
 /* DO NOT TOUCH (unless you know what you are doing) */
-@import url(https://syryz.github.io/MacLike-Discord/src/sidebar.css);
-@import url(https://syryz.github.io/MacLike-Discord/src/window-buttons.css);
-@import url(https://syryz.github.io/MacLike-Discord/src/tweaks.css);
-@import url(https://syryz.github.io/MacLike-Discord/src/settings.css);
+@import url(https://raw.githubusercontent.com/syryz/MacLike-Discord/refs/heads/main/src/sidebar.css);
+@import url(https://raw.githubusercontent.com/syryz/MacLike-Discord/refs/heads/main/src/tweaks.css);
+@import url(https://raw.githubusercontent.com/syryz/MacLike-Discord/refs/heads/main/src/settings.css);
 
 /* All lines below are settings. Remove as you wish. */
 /* Safari-like Header/Address Bar !!EXPERIMENTAL!! */
-@import url(https://syryz.github.io/MacLike-Discord/src/header.css);
+@import url(https://raw.githubusercontent.com/syryz/MacLike-Discord/refs/heads/main/src/header.css);
 /* Apple Emojis */
 @import url(https://mwittrien.github.io/BetterDiscordAddons/Themes/EmojiReplace/base/Apple.css);
 
@@ -33,4 +31,106 @@
   --glass-brightness_light: 110%; /* Mac Default: 100% */
   --glass-blur-strength: 33px; /* Mac Default: 33px */
   --glass-blur-saturation: 150%; /* Mac Default: 150% */
+}
+
+/* --- THE MAC TRAFFIC LIGHTS --- */
+
+/* 1. Hide the Discord logo/wordmark */
+[class*="wordmark_"] {
+  display: none !important;
+}
+
+/* 2. Target the native window controls and strip them */
+[class*="winButton_"] {
+  position: fixed !important;
+  top: 10px !important;
+  width: 12px !important;
+  height: 12px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  z-index: 9999 !important;
+  -webkit-app-region: no-drag !important;
+  pointer-events: auto !important;
+
+  /* Nuke the native background */
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+}
+
+/* Destroy the inner SVGs/Icons */
+[class*="winButton_"] * {
+  display: none !important;
+}
+
+/* 3. Draw fresh, clean circles over the invisible buttons */
+[class*="winButton_"]::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 12px !important;
+  height: 12px !important;
+  border-radius: 50% !important;
+  display: block !important;
+  transition: background-color 0.1s ease !important;
+}
+
+/* 4. Assign Colors & Order (Counting from the right) */
+/* Close (Red) */
+[class*="winButton_"]:nth-last-child(1) { left: 12px !important; }
+[class*="winButton_"]:nth-last-child(1)::after { background-color: #ff5f56 !important; }
+[class*="winButton_"]:nth-last-child(1):hover::after { background-color: #e0443e !important; }
+
+/* Maximize (Green) */
+[class*="winButton_"]:nth-last-child(2) { left: 52px !important; }
+[class*="winButton_"]:nth-last-child(2)::after { background-color: #27c93f !important; }
+[class*="winButton_"]:nth-last-child(2):hover::after { background-color: #1a9c2b !important; }
+
+/* Minimize (Yellow) */
+[class*="winButton_"]:nth-last-child(3) { left: 32px !important; }
+[class*="winButton_"]:nth-last-child(3)::after { background-color: #ffbd2e !important; }
+[class*="winButton_"]:nth-last-child(3):hover::after { background-color: #dea123 !important; }
+
+
+/* --- POSITION DISCORD HISTORY ARROWS --- */
+
+/* OPTION 1 (DEFAULT): Nudge them safely beside the traffic lights (Mac Style) */
+div[class*="backForwardButtons"] {
+  display: flex !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  margin-left: 72px !important; /* Pushes them exactly past the green button */
+}
+
+/* OPTION 2: If you want them on the FAR RIGHT of the screen instead,
+ *  DELETE the Option 1 block above, and REMOVE the "/*" from the start and end of this block: */
+
+ /*
+  *  d *iv[class*="backForwardButtons"] {
+  *  display: flex !important;
+  *  opacity: 1 !important;
+  *  visibility: visible !important;
+  *  position: absolute !important;
+  *  right: 140px !important;
+  *  top: 4px !important;
+  *  }
+  */
+
+
+ /* --- ROUNDED WINDOW CORNERS (FIXED FOR X11) --- */
+
+ html,
+body,
+#app-mount,
+div[class*="appMount_"],
+div[class*="app_"] {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+div[class*="bg_"] {
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
 }
